@@ -77,11 +77,21 @@ namespace EuroCoins
         // distributes one representative portion of coins to the cities' neighbours
         public void distributeCoins()
         {
+            // distribute coins to neighbours in 'new coins' lists
             foreach (Commonwealth currentCountry in this.commonwealths)
             {
                 foreach (City currentCity in currentCountry.Cities)
                 {
                     currentCity.distributeCoinsToNeighbours();
+                }
+            }
+
+            // merge old and new ones
+            foreach (Commonwealth currentCountry in this.commonwealths)
+            {
+                foreach (City currentCity in currentCountry.Cities)
+                {
+                    currentCity.mergeOldAndNewCoins();
                 }
             }
         }

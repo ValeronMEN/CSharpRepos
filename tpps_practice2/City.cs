@@ -23,6 +23,7 @@ namespace EuroCoins
         {
             get { return coins; }
         }
+        private List<Coin> newCoins; // this list is used to prevent getting a coin through the entire eurozone to another city in one day
         private List<City> neighbours;
         public List<City> Neighbours
         {
@@ -44,6 +45,7 @@ namespace EuroCoins
             this.commonwealthName = commonwealthName;
             Coin coin = new Coin(commonwealthName);
             coins = new List<Coin>();
+            newCoins = new List<Coin>();
             neighbours = new List<City>();
             for (int i=0; i<initialCityCoinBalance; i++)
             {
@@ -63,22 +65,28 @@ namespace EuroCoins
 
         public void distributeCoinsToNeighbours()
         {
-            int numberOfCoinsToDistribute = (int)(Math.Floor(this.coins.Count / 1000.0));
+            int numberOfCoinsToDistribute = (int)(Math.Floor(coins.Count / 1000.0));
             foreach (City neighbour in this.neighbours)
             {
                 for (int i = 0; i < numberOfCoinsToDistribute; i++)
                 {
                     var rand = new Random();
                     int index = rand.Next(0, coins.Count);
-                    neighbour.addCoin(coins.ElementAt<Coin>(index));
+                    neighbour.addNewCoin(coins.ElementAt<Coin>(index));
                     coins.RemoveAt(index);
                 }
             }
         }
 
-        public void addCoin(Coin coin)
+        public void addNewCoin(Coin coin)
         {
-            this.coins.Add(coin);
+            newCoins.Add(coin);
+        }
+
+        public void mergeOldAndNewCoins()
+        {
+            coins.AddRange(newCoins);
+            newCoins.Clear();
         }
     }
 }
