@@ -13,7 +13,7 @@ namespace EuroCoins
         {
             get { return commonwealths; }
         }
-        private const int numberOfNeighbours = 4; // one to the north, east, west and south
+        private const int NumberOfNeighbours = 4; // one to the north, east, west and south
 
         public Eurozone()
         {
@@ -32,7 +32,7 @@ namespace EuroCoins
             {
                 foreach (City currentCity in currentCountry.Cities)
                 {
-                    if (currentCity.getNeighboursCount() == numberOfNeighbours)
+                    if (currentCity.getNeighboursCount() == NumberOfNeighbours)
                         continue;
                     foreach (Commonwealth anotherCountry in this.commonwealths)
                     {

@@ -35,7 +35,8 @@ namespace EuroCoins
             get { return commonwealthName; }
         }
 
-        private const int initialCityCoinBalance = 1000000;
+        private const int InitialCityCoinBalance = 1000000;
+        private const int RepresentativePortion = 1000;
 
         public City(int xCoord, int yCoord, string commonwealthName)
         {
@@ -47,7 +48,7 @@ namespace EuroCoins
             coins = new List<Coin>();
             newCoins = new List<Coin>();
             neighbours = new List<City>();
-            for (int i=0; i<initialCityCoinBalance; i++)
+            for (int i=0; i< InitialCityCoinBalance; i++)
             {
                 coins.Add(coin);
             }
@@ -65,7 +66,7 @@ namespace EuroCoins
 
         public void distributeCoinsToNeighbours()
         {
-            int numberOfCoinsToDistribute = (int)(Math.Floor(coins.Count / 1000.0));
+            int numberOfCoinsToDistribute = (int)(Math.Floor(coins.Count / (float)RepresentativePortion));
             foreach (City neighbour in this.neighbours)
             {
                 for (int i = 0; i < numberOfCoinsToDistribute; i++)
