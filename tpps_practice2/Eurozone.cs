@@ -52,7 +52,7 @@ namespace EuroCoins
         }
 
         // checks if the entered countries are neighbours to each other
-        public void checkCountriesConnection()
+        public bool checkCountriesConnection()
         {
             foreach (Commonwealth currentCountry in this.commonwealths)
             {
@@ -70,8 +70,12 @@ namespace EuroCoins
                         break;
                 }
                 if (!currentCountry.linkedFlag)
-                    throw new Exception("Bad configuration of the countries. There's no connection of one of the commonwealth to the others");
+                {
+                    Console.WriteLine("Bad configuration of the countries. There's no connection of one of the commonwealth to the others");
+                    return false;
+                }
             }
+            return true;
         }
 
         // distributes one representative portion of coins to the cities' neighbours
