@@ -116,7 +116,32 @@ namespace EuroCoins
                 int completeCityCount = 0;
                 foreach (City currentCity in currentCountry.Cities)
                 {
-                    if(currentCity.CoinsBalances.Count == commonwealths.Count)
+                    List<Coin> differentCoinsInCity = new List<Coin>();
+                    foreach (Coin currentCoin in currentCity.Coins)
+                    {
+                        if (differentCoinsInCity.Count == 0)
+                        {
+                            differentCoinsInCity.Add(currentCoin);
+                        }
+                        else if (differentCoinsInCity.Count == commonwealths.Count)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            int exampleCoinCount = 0;
+                            foreach (Coin exampleCoin in differentCoinsInCity)
+                            {
+                                if (String.Compare(exampleCoin.CommonwealhName, currentCoin.CommonwealhName) != 0)
+                                    exampleCoinCount++;
+                            }
+                            if (exampleCoinCount == differentCoinsInCity.Count)
+                            {
+                                differentCoinsInCity.Add(currentCoin);
+                            }
+                        }
+                    }
+                    if (differentCoinsInCity.Count == commonwealths.Count)
                     {
                         completeCityCount++;
                     }

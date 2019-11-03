@@ -18,12 +18,13 @@ namespace EuroCoins
         {
             get { return yCoord; }
         }
-        private List<Coin> coins;
-        public List<Coin> Coins
+        private List<CoinsBalance> coinsBalances;
+        public List<CoinsBalance> CoinsBalances
         {
-            get { return coins; }
+            get { return coinsBalances; }
         }
-        private List<Coin> newCoins; // this list is used to prevent getting a coin through the entire eurozone to another city in one day
+        private List<CoinsBalance> newCoinsBalances; // this list is used to prevent getting a coin through the entire eurozone to another city in one day
+
         private List<City> neighbours;
         public List<City> Neighbours
         {
@@ -44,14 +45,11 @@ namespace EuroCoins
             this.yCoord = yCoord;
 
             this.commonwealthName = commonwealthName;
-            Coin coin = new Coin(commonwealthName);
-            coins = new List<Coin>();
-            newCoins = new List<Coin>();
+            CoinsBalance thisCountryCoinsBalance = new CoinsBalance(commonwealthName, InitialCityCoinBalance);
+            coinsBalances = new List<CoinsBalance>();
+            newCoinsBalances = new List<CoinsBalance>();
             neighbours = new List<City>();
-            for (int i=0; i< InitialCityCoinBalance; i++)
-            {
-                coins.Add(coin);
-            }
+            coinsBalances.Add(thisCountryCoinsBalance);
         }
 
         public void addNeighbour(City city)
@@ -66,28 +64,45 @@ namespace EuroCoins
 
         public void distributeCoinsToNeighbours()
         {
-            int numberOfCoinsToDistribute = (int)(Math.Floor(coins.Count / (float)RepresentativePortion));
-            foreach (City neighbour in this.neighbours)
+            foreach (CoinsBalance cb in coinsBalances)
             {
-                for (int i = 0; i < numberOfCoinsToDistribute; i++)
+                int numberOfCoinsToDistribute = (int)(Math.Floor(cb.CoinsNumber / (float)RepresentativePortion)); // Floor!
+                if (numberOfCoinsToDistribute == 0)
+                    continue;
+
+                foreach (City neighbour in this.neighbours)
                 {
-                    var rand = new Random();
-                    int index = rand.Next(0, coins.Count);
-                    neighbour.addNewCoin(coins.ElementAt<Coin>(index));
-                    coins.RemoveAt(index);
+                    neighbour.addNewCoin(new CoinsBalance(cb.CommonwealhName, numberOfCoinsToDistribute));
+                    cb.CoinsNumber -= numberOfCoinsToDistribute;
                 }
             }
         }
 
-        public void addNewCoin(Coin coin)
+        public void addNewCoin(CoinsBalance newCoinsBalance)
         {
-            newCoins.Add(coin);
+            newCoinsBalances.Add(newCoinsBalance);
         }
 
         public void mergeOldAndNewCoins()
         {
-            coins.AddRange(newCoins);
-            newCoins.Clear();
+            bool isMatch;
+            foreach (CoinsBalance ncb in newCoinsBalances)
+            {
+                isMatch = false;
+                foreach (CoinsBalance cb in coinsBalances)
+                {
+                    if (cb.CommonwealhName.Equals(ncb.CommonwealhName))
+                    {
+                        cb.CoinsNumber += ncb.CoinsNumber;
+                        isMatch = true;
+                        break;
+                    }
+                }
+                if (!isMatch)
+                    coinsBalances.Add(ncb);
+            }
+
+            newCoinsBalances.Clear();
         }
     }
 }
