@@ -1,0 +1,7 @@
+C:\Users\AUL\source\repos\Metrics\Metrics\bin\Debug\Metrics.exe.config
+C:\Users\AUL\source\repos\Metrics\Metrics\bin\Debug\Metrics.exe
+C:\Users\AUL\source\repos\Metrics\Metrics\bin\Debug\Metrics.pdb
+C:\Users\AUL\source\repos\Metrics\Metrics\obj\Debug\Metrics.csprojAssemblyReference.cache
+C:\Users\AUL\source\repos\Metrics\Metrics\obj\Debug\Metrics.csproj.CoreCompileInputs.cache
+C:\Users\AUL\source\repos\Metrics\Metrics\obj\Debug\Metrics.exe
+C:\Users\AUL\source\repos\Metrics\Metrics\obj\Debug\Metrics.pdb
