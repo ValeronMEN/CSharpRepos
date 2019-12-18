@@ -1,0 +1,7 @@
+C:\Users\AUL\source\repos\Marchenko_Lab3\Marchenko_Lab3\bin\Debug\Marchenko_Lab3.exe.config
+C:\Users\AUL\source\repos\Marchenko_Lab3\Marchenko_Lab3\bin\Debug\Marchenko_Lab3.exe
+C:\Users\AUL\source\repos\Marchenko_Lab3\Marchenko_Lab3\bin\Debug\Marchenko_Lab3.pdb
+C:\Users\AUL\source\repos\Marchenko_Lab3\Marchenko_Lab3\obj\Debug\Marchenko_Lab3.csprojAssemblyReference.cache
+C:\Users\AUL\source\repos\Marchenko_Lab3\Marchenko_Lab3\obj\Debug\Marchenko_Lab3.csproj.CoreCompileInputs.cache
+C:\Users\AUL\source\repos\Marchenko_Lab3\Marchenko_Lab3\obj\Debug\Marchenko_Lab3.exe
+C:\Users\AUL\source\repos\Marchenko_Lab3\Marchenko_Lab3\obj\Debug\Marchenko_Lab3.pdb
