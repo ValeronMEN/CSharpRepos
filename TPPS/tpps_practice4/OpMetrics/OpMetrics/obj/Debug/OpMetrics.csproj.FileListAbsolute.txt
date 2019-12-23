@@ -1,0 +1,7 @@
+C:\Users\AUL\source\repos\OpMetrics\OpMetrics\bin\Debug\OpMetrics.exe.config
+C:\Users\AUL\source\repos\OpMetrics\OpMetrics\bin\Debug\OpMetrics.exe
+C:\Users\AUL\source\repos\OpMetrics\OpMetrics\bin\Debug\OpMetrics.pdb
+C:\Users\AUL\source\repos\OpMetrics\OpMetrics\obj\Debug\OpMetrics.csprojAssemblyReference.cache
+C:\Users\AUL\source\repos\OpMetrics\OpMetrics\obj\Debug\OpMetrics.csproj.CoreCompileInputs.cache
+C:\Users\AUL\source\repos\OpMetrics\OpMetrics\obj\Debug\OpMetrics.exe
+C:\Users\AUL\source\repos\OpMetrics\OpMetrics\obj\Debug\OpMetrics.pdb
