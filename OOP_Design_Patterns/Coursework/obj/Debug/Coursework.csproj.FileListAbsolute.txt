@@ -1,0 +1,6 @@
+c:\users\drlove\documents\visual studio 2015\Projects\Coursework\Coursework\bin\Debug\Coursework.exe.config
+c:\users\drlove\documents\visual studio 2015\Projects\Coursework\Coursework\bin\Debug\Coursework.exe
+c:\users\drlove\documents\visual studio 2015\Projects\Coursework\Coursework\bin\Debug\Coursework.pdb
+c:\users\drlove\documents\visual studio 2015\Projects\Coursework\Coursework\obj\Debug\Coursework.csprojResolveAssemblyReference.cache
+c:\users\drlove\documents\visual studio 2015\Projects\Coursework\Coursework\obj\Debug\Coursework.exe
+c:\users\drlove\documents\visual studio 2015\Projects\Coursework\Coursework\obj\Debug\Coursework.pdb
