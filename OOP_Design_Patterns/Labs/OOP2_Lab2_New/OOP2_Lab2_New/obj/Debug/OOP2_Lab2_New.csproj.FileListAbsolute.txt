@@ -1,0 +1,6 @@
+c:\users\drlove\documents\visual studio 2015\Projects\OOP2_Lab2_New\OOP2_Lab2_New\bin\Debug\OOP2_Lab2_New.exe.config
+c:\users\drlove\documents\visual studio 2015\Projects\OOP2_Lab2_New\OOP2_Lab2_New\bin\Debug\OOP2_Lab2_New.exe
+c:\users\drlove\documents\visual studio 2015\Projects\OOP2_Lab2_New\OOP2_Lab2_New\bin\Debug\OOP2_Lab2_New.pdb
+c:\users\drlove\documents\visual studio 2015\Projects\OOP2_Lab2_New\OOP2_Lab2_New\obj\Debug\OOP2_Lab2_New.csprojResolveAssemblyReference.cache
+c:\users\drlove\documents\visual studio 2015\Projects\OOP2_Lab2_New\OOP2_Lab2_New\obj\Debug\OOP2_Lab2_New.exe
+c:\users\drlove\documents\visual studio 2015\Projects\OOP2_Lab2_New\OOP2_Lab2_New\obj\Debug\OOP2_Lab2_New.pdb
